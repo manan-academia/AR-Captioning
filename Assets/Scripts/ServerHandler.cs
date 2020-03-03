@@ -13,12 +13,13 @@ public class ServerHandler : MonoBehaviour
   {
     socket = GameObject.Find("SocketIO").GetComponent<SocketIOComponent>();
     Cube.SetActive(active);
+    socket.On("message", onMessageEvent);
   }
 
   // Update is called once per frame
   void Update()
   {
-    socket.On("message", onMessageEvent);
+
   }
 
   void onMessageEvent(SocketIOEvent evt)
