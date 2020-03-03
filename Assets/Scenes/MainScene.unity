@@ -446,12 +446,105 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 701670374}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 094ab34dbb43341ca92475a06bc20a27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Cube: {fileID: 701670374}
+--- !u!1001 &1153575983
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 422282749409178075, guid: 1ebd9551953ec4d5197268cdb219044f,
+        type: 3}
+      propertyPath: m_Name
+      value: Screen
+      objectReference: {fileID: 0}
+    - target: {fileID: 422282749409178075, guid: 1ebd9551953ec4d5197268cdb219044f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713048794382320584, guid: 1ebd9551953ec4d5197268cdb219044f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713048794382320584, guid: 1ebd9551953ec4d5197268cdb219044f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713048794382320584, guid: 1ebd9551953ec4d5197268cdb219044f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713048794382320584, guid: 1ebd9551953ec4d5197268cdb219044f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713048794382320584, guid: 1ebd9551953ec4d5197268cdb219044f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713048794382320584, guid: 1ebd9551953ec4d5197268cdb219044f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713048794382320584, guid: 1ebd9551953ec4d5197268cdb219044f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713048794382320584, guid: 1ebd9551953ec4d5197268cdb219044f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713048794382320584, guid: 1ebd9551953ec4d5197268cdb219044f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713048794382320584, guid: 1ebd9551953ec4d5197268cdb219044f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713048794382320584, guid: 1ebd9551953ec4d5197268cdb219044f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1ebd9551953ec4d5197268cdb219044f, type: 3}
+--- !u!1 &1153575984 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 422282749409178075, guid: 1ebd9551953ec4d5197268cdb219044f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1153575983}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1153575985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1153575984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 094ab34dbb43341ca92475a06bc20a27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Cube: {fileID: 1153575984}
 --- !u!1 &1572391203
 GameObject:
   m_ObjectHideFlags: 0
@@ -484,7 +577,7 @@ MonoBehaviour:
   GridPrefab: {fileID: 4043009913745851098, guid: 6e6cb511d3a36466f906e777b9c58246,
     type: 3}
   ARCamera: {fileID: 115824466}
-  Portal: {fileID: 701670374}
+  Portal: {fileID: 1153575984}
 --- !u!4 &1572391205
 Transform:
   m_ObjectHideFlags: 0
