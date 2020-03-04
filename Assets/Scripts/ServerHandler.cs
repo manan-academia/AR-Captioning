@@ -20,9 +20,7 @@ public class ServerHandler : MonoBehaviour
   // Start is called before the first frame update
   void Start()
   {
-    socket = GameObject.Find("SocketIO").GetComponent<SocketIOComponent>();
-    MessageQueue = new Queue<string>();
-    socket.On("message", onMessageEvent);
+
     TextElement = Screen.GetComponentInChildren<Canvas>().GetComponentInChildren<TextMesh>();
   }
 
@@ -32,20 +30,4 @@ public class ServerHandler : MonoBehaviour
 
   }
 
-  void onMessageEvent(SocketIOEvent evt)
-  {
-    Debug.Log("Message: " + evt.data.GetField("message"));
-    MessageQueue.Enqueue(evt.data.GetField("message").ToString());
-    // active = !active;
-    Debug.Log("Queue: " + MessageQueue.Count + "TextElement: " + TextElement);
-    displayText();
-  }
-
-  void displayText()
-  {
-    while (MessageQueue.Count > 0)
-    {
-      // TextElement.text += (MessageQueue.Dequeue() + " ");
-    }
-  }
 }

@@ -1,7 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using GoogleARCore;
+using SocketIO;
 using UnityEngine;
+using UnityEngine.Events;
+using TMPro;
 
 public class ARController : MonoBehaviour
 {
@@ -9,12 +12,17 @@ public class ARController : MonoBehaviour
   public GameObject GridPrefab;
   public GameObject ARCamera;
   public GameObject Portal;
+  public TextMeshProUGUI TextElement;
   private List<DetectedPlane> m_NewDetectedPlanes = new List<DetectedPlane>();
+  SocketIOComponent socket;
+  private Queue<string> MessageQueue;
 
   // Start is called before the first frame update
   void Start()
   {
-
+    socket = GameObject.Find("SocketIO").GetComponent<SocketIOComponent>();
+    MessageQueue = new Queue<string>();
+    socket.On("message", onMessageEvent);
   }
 
   // Update is called once per frame
@@ -57,4 +65,21 @@ public class ARController : MonoBehaviour
       Portal.transform.parent = anchor.transform;
     }
   }
+
+  void onMessageEvent(SocketIOEvent evt)
+  {
+    Debug.Log("Message: " + evt.data.GetField("message"));
+    MessageQueue.Enqueue(evt.data.GetField("message").ToString());
+    // Debug.Log("Queue: " + MessageQueue.Count + "TextElement: " + TextElement);
+    displayText();
+  }
+
+  void displayText()
+  {
+    while (MessageQueue.Count > 0)
+    {
+      TextElement.text += MessageQueue.Dequeue();
+    }
+  }
+
 }
