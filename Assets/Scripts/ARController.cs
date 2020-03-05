@@ -69,7 +69,9 @@ public class ARController : MonoBehaviour
   void onMessageEvent(SocketIOEvent evt)
   {
     Debug.Log("Message: " + evt.data.GetField("message"));
-    MessageQueue.Enqueue(evt.data.GetField("message").ToString());
+    string jsonData = evt.data.GetField("message").ToString();
+    string text = jsonData.Substring(1, jsonData.Length - 2);
+    MessageQueue.Enqueue(text);
     // Debug.Log("Queue: " + MessageQueue.Count + "TextElement: " + TextElement);
     displayText();
   }
@@ -78,7 +80,7 @@ public class ARController : MonoBehaviour
   {
     while (MessageQueue.Count > 0)
     {
-      TextElement.text += MessageQueue.Dequeue();
+      TextElement.text += MessageQueue.Dequeue() + " ";
     }
   }
 
